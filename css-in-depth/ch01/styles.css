@@ -41,11 +41,58 @@ a:active {
 .nav a {
 	color: white;
 	background-color: #13a4a4;
-	padding: 5px;
+	padding: 5px 15px;
 	border-radius: 2px;
 	text-decoration: none;
 }
 
 .nav .featured {
 	background-color: orange;
+	box-shadow: 2px 2px #6f9090;
+}
+
+.footer {
+	color: #666;
+	background-color: #ccc;
+	padding: 15px 0;
+	text-align: center;
+	font-size: 14px;
+}
+
+.footer a {
+	color: inherit;
+	background-color: initial;
+	text-decoration: underline;
+}
+
+.coffees {
+	margin: 20px 0;
+}
+
+/* Provides a fallback behavior for legacy browsers */
+.coffees a {
+	display: inline-block;
+	min-width: 300px;
+	padding: 10px 15px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	color: black;
+	background-color: unset;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+/* Targets only browsers that understand grid layout */
+@supports (display: grid) {
+	.coffees {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 10px;
+	}
+
+	/* Overrides the unneeded fallback styles so they don't apply in our grid */
+	.coffees a {
+		margin: unset;
+		min-width: unset;
+	}
 }
