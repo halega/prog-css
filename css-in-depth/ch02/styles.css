@@ -3,3 +3,63 @@
     padding: 1em;
     border: 1px dashed black;
 }
+
+.box {
+    padding: 1em;
+    border-radius: 1em;
+    background-color: lightgray;
+}
+
+.box-small {
+    font-size: 12px;
+}
+
+.box-large {
+    font-size: 18px;
+}
+
+body {
+    font-size: 16px;
+}
+
+.slogan {
+    font-size: 1.2em; /* 16px * 1.2 = 19.2px */
+    padding: 1.2em;  /* 19.2px * 1.2 = 23.04px */
+    background-color: #ccc;
+}
+
+li {
+    margin-bottom: 0.3em;
+}
+
+.xx-small {
+    font-size: xx-small;
+}
+
+.x-small {
+    font-size: x-small;
+}
+
+.small {
+    font-size: small;
+}
+
+.medium {
+    font-size: medium;
+}
+
+.large {
+    font-size: large;
+}
+
+.x-large {
+    font-size: x-large;
+}
+
+.xx-large {
+    font-size: xx-large;
+}
+
+.xxx-large {
+    font-size: xxx-large;
+}
