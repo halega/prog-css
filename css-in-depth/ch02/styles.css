@@ -1,5 +1,5 @@
 .padded {
-    font-size: 16px;
+    font-size: 1rem;
     padding: 1em;
     border: 1px dashed black;
 }
@@ -11,15 +11,11 @@
 }
 
 .box-small {
-    font-size: 12px;
+    font-size: 0.8rem;
 }
 
 .box-large {
-    font-size: 18px;
-}
-
-body {
-    font-size: 16px;
+    font-size: 1.2rem;
 }
 
 .slogan {
@@ -62,4 +58,38 @@ li {
 
 .xxx-large {
     font-size: xxx-large;
+}
+
+/* Applies to all screens but is overriden for larger screens */
+:root {
+    font-size: 0.875em;
+}
+
+@media (min-width: 800px) {
+    :root {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root {
+        font-size: 1.15em;
+    }
+}
+
+.panel {
+    padding: 1em;
+    border: 1px solid #999;
+    border-radius: 0.5em;
+}
+
+.panel > h2 {
+    margin-top: 0;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+ul {
+	font-size: 0.8rem;
 }
