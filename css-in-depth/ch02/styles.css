@@ -93,3 +93,9 @@ li {
 ul {
 	font-size: 0.8rem;
 }
+
+.square {
+	width: 90vmin;
+	height: 90vmin;
+	background-color: #369;
+}
