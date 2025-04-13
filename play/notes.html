@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя веб-страница</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .stave {
+            display: grid;
+            grid-template-columns: repeat(96, 1fr);
+            /* 24 доли × 4 = 96 колонок */
+            grid-template-rows: [G5] 0.25em [F5] 0.25em [E5] 0.25em [D5] 0.25em [C5] 0.25em [B4] 0.25em [A4] 0.25em [G4] 0.25em [F4] 0.25em [E4] 0.25em [D4] 0.25em [C4] 0.25em;
+            background-image: url('/path/to/stave.svg');
+            background-repeat: no-repeat;
+            background-size: 100% 2.25em;
+            background-position: 0 50%;
+        }
+
+        /* Позиционирование нот по высоте */
+        .stave>[data-pitch^="C"][data-pitch$="4"] {
+            grid-row-start: C4;
+        }
+
+        .stave>[data-pitch^="E"][data-pitch$="4"] {
+            grid-row-start: E4;
+        }
+
+        .stave>[data-pitch^="G"][data-pitch$="4"] {
+            grid-row-start: G4;
+        }
+
+        .stave>[data-pitch^="C"][data-pitch$="5"] {
+            grid-row-start: C5;
+        }
+
+        /* Позиционирование по длительности */
+        .stave>[data-duration="1"] {
+            grid-column-end: span 24;
+        }
+
+        /* целая нота */
+        .stave>[data-duration="0.5"] {
+            grid-column-end: span 12;
+        }
+
+        /* половинная */
+        .stave>[data-duration="0.25"] {
+            grid-column-end: span 6;
+        }
+
+        /* четвертная */
+        .stave>[data-duration="0.125"] {
+            grid-column-end: span 3;
+        }
+
+        /* восьмая */
+
+        /* Стили нот */
+        .note {
+            width: 0.5em;
+            height: 0.5em;
+            border-radius: 50%;
+            background-color: black;
+        }
+
+        .whole::after {
+            /* Флаг целой ноты */
+            content: "";
+            display: block;
+            width: 0.1em;
+            height: 1em;
+            background-color: black;
+        }
+
+        .half::after {
+            /* Флаг половинной ноты */
+            content: "";
+            display: block;
+            width: 0.1em;
+            height: 0.5em;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Добро пожаловать на мой сайт</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Главная</a>
+        <a href="#about">О нас</a>
+        <a href="#services">Услуги</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+
+
+    <main>
+
+        <div class="stave bar">
+            <div class="clef" data-pitch="B4"></div>
+            <div class="note whole" data-beat="1" data-pitch="C4"></div>
+            <div class="note half" data-beat="2" data-pitch="E4"></div>
+            <div class="note quarter" data-beat="3" data-pitch="G4"></div>
+            <div class="note eighth" data-beat="4" data-pitch="C5"></div>
+        </div>
+
+        <section id="home">
+            <h2>Главная секция</h2>
+            <p>Это пример базовой структуры веб-страницы.</p>
+        </section>
+
+        <section id="about">
+            <h2>О нас</h2>
+            <p>Здесь будет информация о нашей компании.</p>
+        </section>
+
+        <section id="services">
+            <h2>Наши услуги</h2>
+            <ul>
+                <li>Услуга 1</li>
+                <li>Услуга 2</li>
+                <li>Услуга 3</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Контакты</h2>
+            <p>Свяжитесь с нами:</p>
+            <address>
+                <p>г. Ставрополь</p>
+                <p>Телефон: +7 (XXX) XXX-XX-XX</p>
+                <p>Email: example@email.com</p>
+            </address>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Моя компания. Все права защищены.</p>
+    </footer>
+</body>
+
+</html>
